@@ -16,8 +16,12 @@ db = firestore.client()
 
 def upload_data(data):
     for entry in data:
-        doc_ref = db.collection("legislation").document(entry["id"])
-        doc_ref.set(entry)
+        try:
+            doc_ref = db.collection("legislation").document(entry["id"])
+            doc_ref.set(entry)
+        except:
+            print("Error")
+            print(entry)
 
 
 def main():
