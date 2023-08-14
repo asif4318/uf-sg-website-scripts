@@ -25,7 +25,7 @@ def upload_data(data):
 
 
 def main():
-    json_file_path = "bill_results.json"
+    json_file_path = "legislation_data.json"
     with open(json_file_path, 'r') as json_file:
         data = json.load(json_file)
         upload_data(data)
